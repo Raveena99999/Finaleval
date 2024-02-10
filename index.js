@@ -10,7 +10,11 @@ const cookieParser = require("cookie-parser")
 
 app.use(express.json())
 app.use(cookieParser())
+app.get("/",(req,res)=>{
+    res.send("home page")
+    console.log("home page")
 
+})
 app.use("/users",userRouter)
 app.use("/posts",postRouter)
 dotenv.config()
